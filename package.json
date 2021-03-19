@@ -13,6 +13,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
+    "server": "node src/server/index.js",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
@@ -36,6 +37,8 @@
     ]
   },
   "devDependencies": {
+    "express": "^4.17.1",
+    "sqlite3": "^5.0.2",
     "uuid": "^8.3.2"
   }
 }
