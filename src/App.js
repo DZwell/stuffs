@@ -1,45 +1,56 @@
+import React from 'react';
+import logo from './logo.svg';
+import { Counter } from './features/counter/Counter';
 import './App.css';
-import { v4 as uuid } from 'uuid';
-import { useState } from 'react';
-
-const data = [
-  {
-    name: 'shorts',
-    isPacked: false,
-    id: uuid(),
-  },
-  {
-    name: 'pants',
-    isPacked: false,
-    id: uuid(),
-  },
-  {
-    name: 'sox',
-    isPacked: false,
-    id: uuid(),
-  },
-  {
-    name: 'shirts',
-    isPacked: false,
-    id: uuid(),
-  },
-];
 
 function App() {
-  const [items, setItems] = useState(data);
-
-
-  const handleItemClick = (item) => {
-    item.isPacked = !item.isPacked;
-    setItems([...items]);
-  }
-
   return (
     <div className="App">
-      <header>Stuffs to pack</header>
-      {items.map(item => {
-        return <div className={item.isPacked ? 'packedItem' : ''} onClick={() => handleItemClick(item)} key={item.id}>{item.name}</div>
-      })}
+      <header className="App-header">
+        <img src={logo} className="App-logo" alt="logo" />
+        <Counter />
+        <p>
+          Edit <code>src/App.js</code> and save to reload.
+        </p>
+        <span>
+          <span>Learn </span>
+          <a
+            className="App-link"
+            href="https://reactjs.org/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            React
+          </a>
+          <span>, </span>
+          <a
+            className="App-link"
+            href="https://redux.js.org/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Redux
+          </a>
+          <span>, </span>
+          <a
+            className="App-link"
+            href="https://redux-toolkit.js.org/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Redux Toolkit
+          </a>
+          ,<span> and </span>
+          <a
+            className="App-link"
+            href="https://react-redux.js.org/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            React Redux
+          </a>
+        </span>
+      </header>
     </div>
   );
 }
